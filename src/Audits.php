@@ -45,7 +45,7 @@ class Audits
             return 0;
         }
 
-        return session($this->config->sessionUserId) ?? 0;
+        return function_exists('user_id') ? user_id() : null;
     }
 
     /**
